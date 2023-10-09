@@ -11,6 +11,7 @@ interface AccountSelectionProps extends FieldConfig {
     balance: number;
   }[];
 }
+
 export const AccountSelectionField = (props: AccountSelectionProps) => {
   const [field, meta] = useField(props.name);
 

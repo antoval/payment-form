@@ -81,7 +81,6 @@ export const PaymentForm = ({ locale }: { locale: Locale }) => {
                 type="text"
                 placeholder="LT307300010172619164"
               />
-
               <AccountSelectionField
                 name="payerAccount"
                 label="Payer Account"
