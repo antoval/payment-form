@@ -22,3 +22,11 @@ test('It should impose minimum limit on the purpose field', async ({ mount, page
   await purposeField.blur();
   await expect(app).toContainText('Purpose should be at least');
 });
+
+test('It should disallow incorrect account numbers', async ({ mount, page }) => {
+  const app = await mount(<App />);
+  const payeeAccount = await page.getByLabel('Payee Account');
+  await payeeAccount.fill('LT123');
+  await payeeAccount.blur();
+  await expect(app).toContainText('Invalid Account Number');
+});

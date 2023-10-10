@@ -26,7 +26,7 @@ const PaymentValidationSchema = Yup.object<{
     .min(0.01, 'Amount should be at least 0.01')
     .required('Amount is required'),
   payeeAccount: Yup.string()
-    .test('validateIban', 'Invalid Account Number', (value) =>
+    .test('validateIban', 'Invalid account number', (value) =>
       fetch(`https://openiban.com/validate/${value}?validateBankCode=true&getBIC=true`).then(async (res) => {
         const response = (await res.json()) as OpenIbanResponse;
 
