@@ -28,5 +28,5 @@ test('It should disallow incorrect account numbers', async ({ mount, page }) => 
   const payeeAccount = await page.getByLabel('Payee Account');
   await payeeAccount.fill('LT123');
   await payeeAccount.blur();
-  await expect(app).toContainText('Invalid Account Number');
+  await expect(app).toContainText('Invalid account number');
 });
